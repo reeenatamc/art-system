@@ -1,0 +1,20 @@
+<header class="header">
+    <div class="header-content">
+        <div class="header-left">
+            <img src="\assets\logoNuevo.png" alt="logoNuevo" class="icon">
+            <span class="title">Artistas</span>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a *ngFor="let option of options" [routerLink]="option.route" [class.active]="isActive(option.route)">{{
+                    option.label }}</a>
+            </nav>
+            <button *ngIf="!currentUser; else loggedIn" class="login-button" (click)="navigateToLogin()">Iniciar
+                sesión</button>
+            <ng-template #loggedIn>
+                <button class="logout-button" (click)="logout()">Cerrar sesión</button>
+            </ng-template>
+
+        </div>
+    </div>
+</header>

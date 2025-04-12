@@ -11,8 +11,12 @@ export const routes: Routes = [
     loadComponent: () => import('./auth/features/sign-up/sign-up.component').then(m => m.SignUpComponent)
   },
   {
+    path: 'landing-page',
+    loadComponent: () => import('./pages/landing-page/landing-page.component').then(m => m.LandingPageComponent)
+  },
+  {
     path: '',
-    redirectTo: 'sign-in',
+    redirectTo: 'landing-page',
     pathMatch: 'full'
   }
 ];
